@@ -12,17 +12,18 @@ let g_roc = 0;
 let g_ratio = 0;
 
 const ratioTocolor = (ratio: number) => {
+  
   var r = 0;
   var g = 0;
   var b = 0;
   if (ratio < 0.5) {
-    r = 239;
+    r = 0;
     g = Math.round(510 * ratio);
-    b = 80;
+    b = 239;
   } else {
     r = Math.round(510 - 510 * ratio);
+    g = 14;
     g = 161;
-    b = 14;
   }
   var h = r * 0x10000 + g * 0x100 + b * 0x1;
   return "#" + ("000000" + h.toString(16)).slice(-6);
